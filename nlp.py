@@ -46,18 +46,18 @@ with st.beta_container():
      st.header('Wordcloud image')
      if not cloud(input_text):
          st.warning('Please input the text :)')
+     if not input_num:
+         st.warning('Please select a number :)')   
         
-        
-     if (cloud(input_text)==True) & (input_num == True):
+     if cloud(input_text) is True and input_num is True:
           output = cloud(input_text)
-          wordcloud = WordCloud(max_font_size=50, max_words=input_num, background_color='white').generate_from_frequencies(output)   
+          wordcloud = WordCloud(max_font_size=50, max_words=input_num, background_color='white').generate_from_frequencies(output)  
           fig = plt.figure(figsize=(10,5))
           plt.imshow(wordcloud, interpolation='bilinear')
           plt.axis('off')
           st.pyplot(fig)
-     if not input_num:
-         st.warning('Please select a number :)')
-      
+     
+        
 with st.beta_container():    
     st.header('Sentiment analysis')
     
