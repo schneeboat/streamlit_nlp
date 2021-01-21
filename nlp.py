@@ -9,7 +9,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
-#from wordcloud import WordCloud
+from wordcloud import WordCloud
 import string
 
 st.sidebar.title('Text analysis:')
