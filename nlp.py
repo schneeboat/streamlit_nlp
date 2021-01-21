@@ -46,7 +46,9 @@ with st.beta_container():
      st.header('Wordcloud image')
      if not cloud(input_text, input_num):
          st.warning('Please input the text AND select a number:)')
-        
+     if input_num == 0:
+         if cloud(input_text, input_num):
+             st.warning('Please select a number')
      if cloud(input_text, input_num):
           output = cloud(input_text, input_num)
           wordcloud = WordCloud(max_font_size=50, max_words=input_num, background_color='white').generate_from_frequencies(output)  
