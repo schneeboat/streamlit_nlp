@@ -17,7 +17,7 @@ input_text = st.sidebar.text_area(label="English text you want to analyze:", hei
      
 input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=500)
 
-def cloud(text, number):
+def cloud(text):
     
     tokenized_text = [word_tokenize(word) for word in [text]]
     stop_words=set(stopwords.words("english")+list(string.punctuation)+list(string.digits))
@@ -32,8 +32,8 @@ def cloud(text, number):
     keywords_text = [[item.lower() for item in sublist] for sublist in filtered_texts]
     kl = [x for sub in keywords_text for x in sub]
     keys_freq = Counter(kl)
-    most_freq_key = keys_freq.most_common(number)
-    return most_freq_key
+    
+    return keys_freq
 
     
 
@@ -49,7 +49,7 @@ with st.beta_container():
         
         
      if cloud(input_text,input_num):
-          output = cloud(input_text,input_num)
+          output = cloud(input_text)
           wordcloud = WordCloud(max_font_size=50, max_words=input_num, background_color='white').generate_from_frequencies(output)   
           fig = plt.figure(figsize=(10,5))
           plt.imshow(wordcloud, interpolation='bilinear')
