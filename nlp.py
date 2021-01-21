@@ -15,7 +15,7 @@ import string
 st.sidebar.title('Text analysis:')
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)
      
-input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=500)
+input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=100)
 
 def cloud(text, number):
     
