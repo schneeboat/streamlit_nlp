@@ -68,6 +68,7 @@ with st.beta_container():
             height = p.get_height()
             ax.annotate(height,(p.get_x() + p.get_width() / 2., p.get_height()), 
                 ha='center', va='center', xytext=(0, 4.5), textcoords='offset points', color='black')
+            plt.xticks(fontsize=17)
         st.pyplot(fig2)
     if not input_text:
         st.warning('Please input the text you want to analyze :)')
