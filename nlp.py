@@ -56,10 +56,7 @@ with st.beta_container():
           plt.axis('off')
           st.pyplot(fig)
      elif not input_num:
-              st.warning('Please select a number :)')
-     elif not input_text and input_num :
-              st.warning('Please input the text you want to analyze :)')
-      
+              st.warning('Please select a number :)')      
       
       
 with st.beta_container():    
