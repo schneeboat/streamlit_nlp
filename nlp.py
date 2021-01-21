@@ -45,7 +45,7 @@ score = sia.polarity_scores(input_text)
 with st.beta_container():
      st.header('Wordcloud image')
      if not cloud(input_text):
-         st.warning('Please input the text AND select a number :)')
+         st.warning('Please input the text :)')
         
         
      if cloud(input_text):
@@ -55,7 +55,8 @@ with st.beta_container():
           plt.imshow(wordcloud, interpolation='bilinear')
           plt.axis('off')
           st.pyplot(fig)
-      
+     if not input_num:
+         st.warning('Please select a number :)')
       
 with st.beta_container():    
     st.header('Sentiment analysis')
