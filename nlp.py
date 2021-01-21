@@ -48,7 +48,7 @@ with st.beta_container():
          st.warning('Please input the text :)')
         
         
-     if cloud(input_text)==True & input_num == True:
+     if (cloud(input_text)==True) & (input_num == True):
           output = cloud(input_text)
           wordcloud = WordCloud(max_font_size=50, max_words=input_num, background_color='white').generate_from_frequencies(output)   
           fig = plt.figure(figsize=(10,5))
