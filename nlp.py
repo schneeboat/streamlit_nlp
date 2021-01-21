@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import streamlit as st
-import pandas as pd
 import matplotlib.pyplot as plt
 import nltk
 nltk.download('punkt')
@@ -12,7 +11,7 @@ from wordcloud import WordCloud
 import string
 
 
-input_text = st.sidebar.text_area(label="Text you want to analyze:")
+input_text = st.sidebar.text_area(label="English text you want to analyze:", height = 400)
 input_num = st.sidebar.slider(label='How many words to keep (max)?', max_value=500)
 
 def cloud(text, number):
@@ -38,6 +37,7 @@ def cloud(text, number):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
     return fig
+
 if cloud(input_text,input_num):
     st.write(cloud(input_text,input_num))
 

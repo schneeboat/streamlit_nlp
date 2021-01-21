@@ -1,5 +1,4 @@
-pandas==1.2.0
-nltk==3.5
 streamlit==0.74.1
 matplotlib==3.3.3
+nltk==3.5
 wordcloud==1.8.1
