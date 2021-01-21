@@ -20,7 +20,7 @@ input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?',
 def cloud(text, number):
     
     tokenized_text = [word_tokenize(word) for word in [text]]
-    stop_words=set(stopwords.words("english")+list(string.punctuation)+list(string.digits)+["'s", "''", "'ve", '""'])
+    stop_words=set(stopwords.words("english")+list(string.punctuation)+list(string.digits)+["'s", "''", "'ve", '"'])
     filtered_texts=[]
     for t in tokenized_text:
         filtered_text=[]
