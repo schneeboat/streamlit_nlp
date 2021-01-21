@@ -31,9 +31,8 @@ def cloud(text, number):
     keys_freq = Counter(kl)
     #most_freq_key = keys_freq.most_common(number)
     
-    wordcloud = WordCloud(max_font_size=50, max_words=number, background_color='white').generate_from_frequencies(keys_freq)
-    fig = plt.subplots()
-    plt.figure(figsize=(10,5))
+    wordcloud = WordCloud(max_font_size=50, max_words=number, background_color='white').generate_from_frequencies(keys_freq)   
+    fig = plt.figure(figsize=(10,5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
     return fig
