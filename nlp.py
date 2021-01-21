@@ -44,19 +44,17 @@ score = sia.polarity_scores(input_text)
 
 with st.beta_container():
      st.header('Wordcloud image')
-     if not cloud(input_text,input_num):
-         st.warning('Please input the text and select a number :)')
+     if not cloud(input_text):
+         st.warning('Please input the text AND select a number :)')
         
         
-     if cloud(input_text,input_num):
+     if cloud(input_text):
           output = cloud(input_text)
           wordcloud = WordCloud(max_font_size=50, max_words=input_num, background_color='white').generate_from_frequencies(output)   
           fig = plt.figure(figsize=(10,5))
           plt.imshow(wordcloud, interpolation='bilinear')
           plt.axis('off')
           st.pyplot(fig)
-     elif not input_num:
-              st.warning('Please select a number :)')      
       
       
 with st.beta_container():    
