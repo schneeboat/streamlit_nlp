@@ -11,7 +11,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
 from wordcloud import WordCloud
-<<<<<<< HEAD
+
 from nltk.tokenize import sent_tokenize
 from sklearn.metrics.pairwise import cosine_similarity
 import re
@@ -21,14 +21,9 @@ from remotezip import RemoteZip
 with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zip:
     file = zip.extract('glove.6B.100d.txt')
     
-    
-    
-=======
->>>>>>> 384d01c186334420b162f94940837b06db53f8b6
 
-import re
 st.sidebar.title('Text analysis:')
-<<<<<<< HEAD
+
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)  
 input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=100)
 
@@ -74,11 +69,11 @@ for i in range(len(sent_tok)):
 
 nx_graph = nx.from_numpy_array(sim_mat)
 scores = nx.pagerank(nx_graph)
-=======
+
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)
      
 input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=100)
->>>>>>> 384d01c186334420b162f94940837b06db53f8b6
+
 
 ranked_sentences = sorted(((scores[i],s) for i,s in enumerate(sent_tok)), reverse=True)
 
