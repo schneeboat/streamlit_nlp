@@ -10,17 +10,17 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
 from wordcloud import WordCloud
-import string
 
+import re
 st.sidebar.title('Text analysis:')
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)
      
 input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=100)
 
 def cloud(text, number):
-    
-    tokenized_text = [word_tokenize(word) for word in [text]]
-    stop_words=set(stopwords.words("english")+list(string.punctuation)+list(string.digits)+["'s", "''", "'ve", "'ll","``","..."])
+    formatted_t = re.sub('[^a-zA-Z-]', ' ', text)
+    tokenized_text = [word_tokenize(word) for word in [formatted_t]]
+    stop_words=stopwords.words("english")
     filtered_texts=[]
     for t in tokenized_text:
         filtered_text=[]
