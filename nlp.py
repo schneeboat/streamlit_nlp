@@ -111,7 +111,7 @@ with st.beta_container():
         st.warning('Please input the text you want to analyze :)')
     if len(ranked_sentences) >3:
         st.write(ranked_sentences[i][1])
-    else:
+    elif len(ranked_sentences) <= 3:
         st.write(ranked_sentences[0][1])
 
 
