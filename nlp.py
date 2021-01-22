@@ -109,11 +109,9 @@ with st.beta_container():
     st.header('Summary:')
     if not input_text:
         st.warning('Please input the text you want to analyze :)')
-    if len(ranked_sentences) >3:
-        st.write(ranked_sentences[i][1])
-    elif len(ranked_sentences) <= 3:
+    if len(ranked_sentences) >0:
         st.write(ranked_sentences[0][1])
-
+    
 
   
   
