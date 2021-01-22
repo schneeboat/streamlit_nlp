@@ -70,7 +70,7 @@ for i in range(len(sent_tok)):
 nx_graph = nx.from_numpy_array(sim_mat)
 scores = nx.pagerank(nx_graph)
 
-input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)
+input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300, key='na')
      
 input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=100)
 
