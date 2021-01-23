@@ -137,7 +137,7 @@ with st.beta_container():
     
     if input_text:
         fig2, ax = plt.subplots(figsize=(12,6))
-        ax.bar(zip(*score.items()), color='rosybrown', bottom=0)
+        ax.bar(*zip(*score.items()), color='rosybrown', bottom=0)
         for p in ax.patches:
             height = p.get_height()
             ax.annotate(height,(p.get_x() + p.get_width() / 2., p.get_height()), 
