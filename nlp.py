@@ -17,6 +17,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 import networkx as nx
 from remotezip import RemoteZip
+
 @st.cache
 def load_remote():
     with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
@@ -77,6 +78,7 @@ ranked_sentences = sorted(((scores[i],s) for i,s in enumerate(sent_tok)), revers
 
 
 #cloud
+@st.cache
 def cloud(text, number):
     formatted_t = re.sub('[^a-zA-Z-]', ' ', text)
     tokenized_text = [word_tokenize(word) for word in [formatted_t]]
