@@ -17,9 +17,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 import networkx as nx
 from remotezip import RemoteZip
-
-with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
-     file = zf.extract('glove.6B.100d.txt')
+@st.cache
+def load_remote():
+    with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
+        file = zf.extract('glove.6B.100d.txt')
+    return file
     
 
 st.sidebar.title('Text analysis:')
@@ -41,7 +43,7 @@ clean_sentences = [remove_stopwords(r.split()) for r in lower_form_sent_tok]
 
 
 word_embeddings = {}
-f = open(file, encoding='utf-8')
+f = open(load_remote(), encoding='utf-8')
 for line in f:
     values = line.split()
     word = values[0]
