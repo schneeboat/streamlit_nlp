@@ -1,5 +1,5 @@
 # streamlit_nlp
-A text analyst tool: word cloud generator + sentiment analysis
+A nlp web app
 
 https://share.streamlit.io/schneeboat/streamlit_nlp/main/nlp.py
 
