@@ -17,7 +17,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 import networkx as nx
 from remotezip import RemoteZip
-st.spinner(text='In progress...')
+
 @st.cache
 def load_remote():
     with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
