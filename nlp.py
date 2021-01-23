@@ -18,8 +18,8 @@ import re
 import networkx as nx
 from remotezip import RemoteZip
 
-with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zip:
-     file = zip.extract('glove.6B.100d.txt')
+with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
+     file = zf.extract('glove.6B.100d.txt')
     
 
 st.sidebar.title('Text analysis:')
