@@ -19,9 +19,9 @@ import networkx as nx
 from remotezip import RemoteZip
 
 @st.cache
-def load_remote():
-    with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
-        file = zf.extract('glove.6B.100d.txt')
+#def load_remote():
+ #   with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
+  #      file = zf.extract('glove.6B.100d.txt')
     return file
     
 
