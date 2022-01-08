@@ -22,7 +22,7 @@ from remotezip import RemoteZip
 #def load_remote():
  #   with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
   #      file = zf.extract('glove.6B.100d.txt')
-    return file
+#    return file
     
 
 st.sidebar.title('Text analysis:')
