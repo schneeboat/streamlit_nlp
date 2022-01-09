@@ -111,7 +111,7 @@ score = sia.polarity_scores(input_text)
 
 
 #output
-with st.beta_container():
+with st.container():
     st.header('Summary:')
     if not input_text:
         st.warning('Please input the text you want to analyze :)')
@@ -122,7 +122,7 @@ with st.beta_container():
   
   
   
-with st.beta_container():
+with st.container():
      st.header('Wordcloud image')
      if not cloud(input_text, input_num):
          st.warning('Please input the text AND select a number :)')
@@ -138,7 +138,7 @@ with st.beta_container():
           st.pyplot(fig)
      
         
-with st.beta_container():    
+with st.container():    
     st.header('Sentiment analysis')
     
     if input_text:
