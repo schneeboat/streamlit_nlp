@@ -20,7 +20,7 @@ from remotezip import RemoteZip
 
 @st.cache
 def load_remote():
-	file = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt').read()
+	file = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt')
 	return file
    #with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
     #    file = zf.extract('glove.6B.100d.txt')
