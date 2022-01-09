@@ -18,10 +18,10 @@ import re
 import networkx as nx
 from remotezip import RemoteZip
 
-@st.cache
-def load_remote():
-	file = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt')
-	return file
+#@st.cache
+#def load_remote():
+#	file = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt').read()
+#	return file
    #with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
     #    file = zf.extract('glove.6B.100d.txt')
    #return file
@@ -46,7 +46,7 @@ clean_sentences = [remove_stopwords(r.split()) for r in lower_form_sent_tok]
 
 
 word_embeddings = {}
-f = open(load_remote(), encoding='utf-8')
+f = open('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt', encoding='utf-8')
 for line in f:
     values = line.split()
     word = values[0]
