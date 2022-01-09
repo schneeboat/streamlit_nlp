@@ -11,7 +11,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
 from wordcloud import WordCloud
-import urllib2
+from  urllib.request import  urlopen
 from nltk.tokenize import sent_tokenize
 from sklearn.metrics.pairwise import cosine_similarity
 import re
@@ -20,7 +20,7 @@ from remotezip import RemoteZip
 
 @st.cache
 def load_remote():
-	file = urllib2.urlopen('https://github.com/rohanrao619/Twitter_Sentiment_Analysis/blob/master/glove.6B.100d.txt')
+	file = urlopen('https://github.com/rohanrao619/Twitter_Sentiment_Analysis/blob/master/glove.6B.100d.txt')
 	return file
    #with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
     #    file = zf.extract('glove.6B.100d.txt')
