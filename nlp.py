@@ -39,6 +39,7 @@ formatted_sent_tok = [re.sub('[^a-zA-Z]', ' ', x) for x in sent_tok]
 lower_form_sent_tok = [x.lower() for x in formatted_sent_tok]
 stop_words=stopwords.words("english")
 
+@st.cache
 def remove_stopwords(sen):
     sen_new = " ".join([i for i in sen if i not in stop_words])
     return sen_new
@@ -46,7 +47,7 @@ clean_sentences = [remove_stopwords(r.split()) for r in lower_form_sent_tok]
 
 
 word_embeddings = {}
-@st.cache
+
 f = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt')
 for line in f:
     values = line.split()
