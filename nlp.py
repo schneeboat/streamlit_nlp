@@ -46,7 +46,7 @@ clean_sentences = [remove_stopwords(r.split()) for r in lower_form_sent_tok]
 
 
 word_embeddings = {}
-f = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt', encoding='utf-8')
+f = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt', encoding='utf-8').read()
 for line in f:
     values = line.split()
     word = values[0]
