@@ -30,7 +30,7 @@ from remotezip import RemoteZip
 st.sidebar.title('Text analysis:')
 
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)  
-input_num = st.sidebar.slider(label='How many words to keep for wordcloud viz?', max_value=100)
+input_num = st.sidebar.slider(label='Top N words appeared the most in the text /(Choose a N/)', max_value=100)
 
 
 # #summarization
@@ -114,7 +114,7 @@ score = sia.polarity_scores(input_text)
 
 #output
 with st.container():
-    st.header('Summary:')
+    st.header('Summary')
     if not input_text:
         st.warning('Please input the text you want to analyze :)')
     if len(ranked_sentences) >0:
@@ -125,7 +125,7 @@ with st.container():
   
   
 with st.container():
-     st.header('Wordcloud image')
+     st.header('Wordcloud')
      if not cloud(input_text, input_num):
          st.warning('Please input the text AND select a number :)')
      if input_num == 0:
@@ -141,7 +141,7 @@ with st.container():
      
         
 with st.container():    
-    st.header('Sentiment analysis')
+    st.header('Sentiment')
     
     if input_text:
         fig2, ax = plt.subplots(figsize=(12,6))
