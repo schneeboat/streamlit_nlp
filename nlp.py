@@ -30,7 +30,7 @@ from remotezip import RemoteZip
 st.sidebar.title('Text analysis:')
 
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)  
-input_num = st.sidebar.slider(label='Top N words appeared the most in the text /(Choose a N/)', max_value=100)
+input_num = st.sidebar.slider(label='Top N words appeared the most in the text (Choose a N)', max_value=100)
 
 
 # #summarization
