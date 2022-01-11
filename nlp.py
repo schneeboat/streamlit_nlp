@@ -20,17 +20,15 @@ from remotezip import RemoteZip
 
 #@st.cache
 #def load_remote():
-#	file = urlopen('https://media.githubusercontent.com/media/rohanrao619/Twitter_Sentiment_Analysis/master/glove.6B.100d.txt').read()
-#	return file
-   #with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
-    #    file = zf.extract('glove.6B.100d.txt')
-   #return file
+ #with RemoteZip('http://nlp.stanford.edu/data/glove.6B.zip') as zf:
+   # file = zf.extract('glove.6B.100d.txt')
+  #return file
     
 
 st.sidebar.title('Text analysis:')
 
 input_text = st.sidebar.text_area(label="English text you want to analyze:", height=300)  
-input_num = st.sidebar.slider(label='Top N words appeared the most in the text (Choose a N)', max_value=100)
+input_num = st.sidebar.slider(label='Top N words appeared the most in the text:', max_value=100)
 
 
 # #summarization
